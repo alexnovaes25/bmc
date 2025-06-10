@@ -1,0 +1,2 @@
+# bmc
+Business model canvas
