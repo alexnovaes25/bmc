@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Model Canvas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Full viewport height */
+            padding: 20px;
+        }
+        .canvas-container {
+            display: grid;
+            gap: 16px; /* Gap between quadrants */
+            background-color: #ffffff; /* White background for the canvas */
+            border-radius: 20px; /* Rounded corners for the entire canvas */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            padding: 24px;
+            max-width: 1200px; /* Max width for desktop */
+            width: 100%;
+            /* Define grid columns for different screen sizes */
+            grid-template-areas:
+                "key_partners key_activities value_propositions customer_relationships customer_segments"
+                "key_partners key_activities value_propositions customer_relationships customer_segments"
+                "key_partners key_activities value_propositions customer_relationships customer_segments"
+                "key_resources key_activities value_propositions customer_relationships customer_segments"
+                "cost_structure key_activities value_propositions customer_relationships customer_segments"
+                "cost_structure channels channels channels channels"
+                "cost_structure channels channels channels channels"
+                "cost_structure channels channels channels channels"
+                "cost_structure channels channels channels channels"
+                "revenue_streams channels channels channels channels"
+                "revenue_streams channels channels channels channels"
+                "revenue_streams channels channels channels channels";
+
+            /* Adjust grid for medium screens */
+            @media (min-width: 768px) and (max-width: 1023px) {
+                grid-template-areas:
+                    "key_partners key_activities value_propositions customer_relationships"
+                    "key_partners key_activities value_propositions customer_relationships"
+                    "key_partners key_activities value_propositions customer_relationships"
+                    "key_resources key_activities value_propositions customer_relationships"
+                    "cost_structure key_activities value_propositions customer_relationships"
+                    "cost_structure channels channels channels"
+                    "cost_structure channels channels channels"
+                    "cost_structure channels channels channels"
+                    "cost_structure customer_segments customer_segments customer_segments"
+                    "revenue_streams customer_segments customer_segments customer_segments"
+                    "revenue_streams customer_segments customer_segments customer_segments";
+            }
+
+            /* Adjust grid for small screens (mobile) */
+            @media (max-width: 767px) {
+                grid-template-columns: 1fr; /* Single column layout for mobile */
+                grid-template-areas:
+                    "customer_segments"
+                    "value_propositions"
+                    "channels"
+                    "customer_relationships"
+                    "revenue_streams"
+                    "key_resources"
+                    "key_activities"
+                    "key_partners"
+                    "cost_structure";
+            }
+        }
+
+        /* Styling for each quadrant */
+        .quadrant {
+            background-color: #fbfdff; /* Slightly different background for quadrants */
+            border: 1px solid #e2e8f0; /* Light border */
+            border-radius: 12px; /* Rounded corners for quadrants */
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            min-height: 200px; /* Minimum height for better visual balance */
+        }
+        .quadrant:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .quadrant h2 {
+            font-size: 1.25rem; /* Larger heading */
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #334155; /* Darker text */
+        }
+        .quadrant p {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-bottom: 15px;
+            flex-grow: 1; /* Allow description to take available space */
+        }
+        .quadrant img {
+            max-width: 100px; /* Image size */
+            height: auto;
+            border-radius: 8px;
+            margin-top: auto; /* Push image to bottom */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Specific grid area assignments */
+        #customer_segments { grid-area: customer_segments; }
+        #value_propositions { grid-area: value_propositions; }
+        #channels { grid-area: channels; }
+        #customer_relationships { grid-area: customer_relationships; }
+        #revenue_streams { grid-area: revenue_streams; }
+        #key_resources { grid-area: key_resources; }
+        #key_activities { grid-area: key_activities; }
+        #key_partners { grid-area: key_partners; }
+        #cost_structure { grid-area: cost_structure; }
+
+        /* Mobile specific adjustments for image size */
+        @media (max-width: 767px) {
+            .quadrant img {
+                max-width: 80px;
+            }
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-200 selection:text-blue-900">
+    <div class="canvas-container">
+        <!-- Quadrante 8: Parcerias Chave -->
+        <div id="key_partners" class="quadrant">
+            <h2>8. Parcerias Chave</h2>
+            <p>Descreve a rede de fornecedores e parceiros que fazem o modelo de negócios funcionar. Quem são seus aliados estratégicos?</p>
+            <img src="https://placehold.co/100x100/A7F3D0/065F46?text=Parcerias" alt="Ícone de Parcerias Chave">
+        </div>
+
+        <!-- Quadrante 6: Atividades Chave -->
+        <div id="key_activities" class="quadrant">
+            <h2>7. Atividades Chave</h2>
+            <p>Descreve as ações mais importantes que uma empresa deve executar para fazer seu modelo de negócios funcionar. O que você precisa fazer para entregar sua proposta de valor?</p>
+            <img src="https://placehold.co/100x100/BFDBFE/1E40AF?text=Atividades" alt="Ícone de Atividades Chave">
+        </div>
+
+        <!-- Quadrante 2: Propostas de Valor -->
+        <div id="value_propositions" class="quadrant">
+            <h2>2. Propostas de Valor</h2>
+            <p>Descreve o pacote de produtos e serviços que criam valor para um Segmento de Cliente específico. O que você oferece que resolve o problema ou satisfaz a necessidade do cliente?</p>
+            <img src="https://placehold.co/100x100/FEE2E2/991B1B?text=Valor" alt="Ícone de Propostas de Valor">
+        </div>
+
+        <!-- Quadrante 4: Relacionamento com Clientes -->
+        <div id="customer_relationships" class="quadrant">
+            <h2>4. Relacionamento com Clientes</h2>
+            <p>Descreve os tipos de relacionamento que uma empresa estabelece com Segmentos de Clientes específicos. Podem ser pessoais, automatizados, comunidades, etc.</p>
+            <img src="https://placehold.co/100x100/DBEAFE/1E3A8A?text=Relac." alt="Ícone de Relacionamento com Clientes">
+        </div>
+
+        <!-- Quadrante 1: Segmentos de Clientes -->
+        <div id="customer_segments" class="quadrant">
+            <h2>1. Segmentos de Clientes</h2>
+            <p>Define os diferentes grupos de pessoas ou organizações que uma empresa busca alcançar e servir.</p>
+            <img src="https://placehold.co/100x100/E0F2FE/0C4A6E?text=Clientes" alt="Ícone de Segmentos de Clientes">
+        </div>
+
+        <!-- Quadrante 7: Recursos Principais -->
+        <div id="key_resources" class="quadrant">
+            <h2>6. Recursos Principais</h2>
+            <p>Descreve os ativos mais importantes necessários para fazer um modelo de negócios funcionar. Podem ser físicos, intelectuais, humanos ou financeiros.</p>
+            <img src="https://placehold.co/100x100/CFFAFE/0E7490?text=Recursos" alt="Ícone de Recursos Principais">
+        </div>
+
+        <!-- Quadrante 9: Estrutura de Custos -->
+        <div id="cost_structure" class="quadrant">
+            <h2>9. Estrutura de Custos</h2>
+            <p>Descreve todos os custos incorridos para operar um modelo de negócios. Quais são os gastos essenciais para manter a empresa funcionando?</p>
+            <img src="https://placehold.co/100x100/FECACA/7F1D1D?text=Custos" alt="Ícone de Estrutura de Custos">
+        </div>
+
+        <!-- Quadrante 3: Canais -->
+        <div id="channels" class="quadrant">
+            <h2>3. Canais</h2>
+            <p>Descreve como uma empresa se comunica e alcança seus Segmentos de Clientes para entregar uma Proposta de Valor. Podem ser canais de vendas, distribuição ou comunicação.</p>
+            <img src="https://placehold.co/100x100/D1FAE5/065F46?text=Canais" alt="Ícone de Canais">
+        </div>
+
+        <!-- Quadrante 5: Fontes de Receita -->
+        <div id="revenue_streams" class="quadrant">
+            <h2>5. Fontes de Receita</h2>
+            <p>Representa o dinheiro que uma empresa gera a partir de cada Segmento de Cliente (custos devem ser subtraídos das receitas para criar os ganhos). Como você monetiza seu valor?</p>
+            <img src="https://placehold.co/100x100/FEF9C3/854D09?text=Receita" alt="Ícone de Fontes de Receita">
+        </div>
+    </div>
+</body>
+</html>
